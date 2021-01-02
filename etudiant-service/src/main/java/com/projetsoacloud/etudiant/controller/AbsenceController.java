@@ -55,10 +55,10 @@ public class AbsenceController {
         return absenceService.countByAnneeScolaire();
     }
 
-    @GetMapping("/statistiques/enseignant")
-    public List<Statistique> countByEnseignantId(@RequestParam(name ="anneeScalaire") String anneeScolaire){
-        log.info("Inside countByEnseignantId methode of AbsenceController");
-        return absenceService.countByEnseignantId(anneeScolaire);
+    @GetMapping("/statistiques/date")
+    public List<Statistique> countByDate(@RequestParam(name ="anneeScalaire") String anneeScolaire){
+        log.info("Inside countByDate methode of AbsenceController");
+        return absenceService.countByDate(anneeScolaire);
     }
 
 

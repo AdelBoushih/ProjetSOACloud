@@ -61,10 +61,10 @@ public class ResultatController {
         return resultatService.countAdmisByAnneeScolaire();
     }
 
-    /*@GetMapping("/statistiques/top10")
-    public List<Statistique> topresultats(@RequestParam(name ="anneeScalaire") String anneeScolaire){
+    @GetMapping("/statistiques/top10")
+    public List<Resultat> topresultats(@RequestParam(name ="anneeScolaire") String anneeScolaire){
         log.info("Inside topresultats methode of ResultatController");
         return resultatService.topresultats(anneeScolaire);
-    }*/
+    }
 
 }

@@ -21,7 +21,7 @@ public class Resultat extends AuditModel {
     private Long id;
 
     @Column(name = "moyenne")
-    private Long moyenne;
+    private Double moyenne;
 
     @Column(name = "annee_scolaire")
     private String anneeScolaire;

@@ -63,8 +63,8 @@ public class AbsenceService {
         return absenceRepository.countByClasse(anneeScolaire);
     }
 
-    public List<Statistique> countByEnseignantId(String anneeScolaire){
-        log.info("Inside countByEnseignantId methode of AbsenceService");
-        return absenceRepository.countByEnseignantId(anneeScolaire);
+    public List<Statistique> countByDate(String anneeScolaire){
+        log.info("Inside countByDate methode of AbsenceService");
+        return absenceRepository.countByDate(anneeScolaire);
     }
 }

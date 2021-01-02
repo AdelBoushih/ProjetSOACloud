@@ -86,8 +86,8 @@ public class ResultatService {
         return stats;
     }
 
-    /*public List<Statistique> topresultats(String anneeScolaire) {
-
-        return resultatRepository.topresultats(anneeScolaire);
-    }*/
+    public List<Resultat> topresultats(String anneeScolaire) {
+        log.info("Inside topresultats methode of ResultatService");
+        return resultatRepository.findTop10ByAnneeScolaireOrderByMoyenneDesc(anneeScolaire);
+    }
 }
