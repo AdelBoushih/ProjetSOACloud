@@ -44,13 +44,13 @@ public class ResultatController {
     }
 
     @GetMapping("/statistiques/classe")
-    public List<Statistique> countAdmisByClasse(@RequestParam(name ="anneeScalaire") String anneeScolaire){
+    public List<Statistique> countAdmisByClasse(@RequestParam(name ="anneeScolaire") String anneeScolaire){
         log.info("Inside countAdmisByClasse methode of ResultatController");
         return resultatService.countAdmisByClasse(anneeScolaire);
     }
 
     @GetMapping("/statistiques/sexe")
-    public List<Statistique> countAdmisBySexe(@RequestParam(name ="anneeScalaire") String anneeScolaire){
+    public List<Statistique> countAdmisBySexe(@RequestParam(name ="anneeScolaire") String anneeScolaire){
         log.info("Inside countAdmisBySexe methode of ResultatController");
         return resultatService.countAdmisBySexe(anneeScolaire);
     }

@@ -80,15 +80,5 @@ public interface ResultatRepository extends JpaRepository<Resultat, Long> {
     List<Statistique> countAllByAnneeScolaire();
 
 
-    /*@Query("SELECT TOP (10) " +
-            "    new com.projetsoacloud.etudiant.entity.Statistique(CONCAT(r.etudiant.prenom, ' ', r.etudiant.nom), r.moyenne) " +
-            "FROM " +
-            "    Resultat r " +
-            "Where " +
-            "    r.anneeScolaire = ?1 " +
-            "ORDER BY " +
-            "    r.moyenne ")
-    List<Statistique> topresultats(String anneeScolaire);*/
-
     List<Resultat> findTop10ByAnneeScolaireOrderByMoyenneDesc(String annee_scolaire);
 }

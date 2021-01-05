@@ -1,6 +1,6 @@
 package com.projetsoacloud.etudiant.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -39,11 +39,11 @@ public class Etudiant extends AuditModel {
     private String email;
 
 
-    @JsonManagedReference()
-    @OneToMany(mappedBy="etudiant", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnoreProperties("resultats")
     private List<Resultat> resultats;
 
-    @JsonManagedReference()
-    @OneToMany(mappedBy="etudiant", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<Resultat> absences;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnoreProperties("absences")
+    private List<Absence> absences;
 }

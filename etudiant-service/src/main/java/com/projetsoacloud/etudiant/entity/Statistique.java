@@ -1,7 +1,5 @@
 package com.projetsoacloud.etudiant.entity;
 
-import java.util.Date;
-
 public class Statistique {
 
     private String critere;
@@ -11,11 +9,6 @@ public class Statistique {
     public Statistique(String critere, Long valeur) {
         this.critere = critere;
         this.valeur  = valeur;
-    }
-
-    public Statistique(String critere, Double moyenne) {
-        this.critere = critere;
-        this.taux  = moyenne;
     }
 
     public String getCritere() {

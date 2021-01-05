@@ -1,6 +1,8 @@
 package com.projetsoacloud.etudiant.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +10,6 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Data
@@ -28,9 +29,7 @@ public class Absence extends AuditModel {
     @Column(name = "annee_scolaire")
     private String anneeScolaire;
 
-    @JsonBackReference()
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="etudiant.id", nullable=false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private Etudiant etudiant;
 }
