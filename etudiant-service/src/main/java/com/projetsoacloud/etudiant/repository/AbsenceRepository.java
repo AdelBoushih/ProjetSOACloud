@@ -15,7 +15,7 @@ public interface AbsenceRepository extends JpaRepository<Absence, Long> {
 
     List<Absence> findByEtudiantId(Long etudiantId);
 
-    boolean existsByEtudiantIdAndDate(Long etudiantId, Date date);
+    boolean existsByEtudiantIdAndDate(Long etudiantId, String date);
 
     @Query("SELECT " +
             "    new com.projetsoacloud.etudiant.entity.Statistique(a.anneeScolaire, COUNT(a.id)) " +

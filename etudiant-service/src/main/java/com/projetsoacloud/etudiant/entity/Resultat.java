@@ -1,5 +1,7 @@
 package com.projetsoacloud.etudiant.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +28,7 @@ public class Resultat extends AuditModel {
     @Column(name = "annee_scolaire")
     private String anneeScolaire;
 
+    @JsonBackReference()
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="etudiant.id", nullable=false)
     @OnDelete(action = OnDeleteAction.CASCADE)
